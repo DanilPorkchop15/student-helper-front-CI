@@ -15,12 +15,16 @@ export const BranchDetailsProvider = React.memo(function BranchDetailsProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const { id } = useParams();
+  const { branchId } = useParams();
 
   const branchDetailsService = useInjectService(BranchDetailsService);
 
+  if (typeof branchId === "undefined") {
+    throw new Error("branchId is undefined");
+  }
+
   const { loading } = useAsync(
-    async () => branchDetailsService.loadBranchDetails.bind(branchDetailsService)(id ? Number(id) : 1),
+    async () => branchDetailsService.loadBranchDetails.bind(branchDetailsService)(Number(branchId)),
     [],
   );
 

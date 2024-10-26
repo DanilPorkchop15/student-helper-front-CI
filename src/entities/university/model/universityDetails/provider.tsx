@@ -9,20 +9,20 @@ import { AppRoutes } from "shared/model/services";
 import PageSpin from "shared/ui/pageSpin";
 
 import { UniversityDetailsService } from "./service";
+import { throws } from "node:assert";
 
 export const UniversityDetailsProvider = React.memo(function UniversityDetailsProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const { id } = useParams();
+  const { universityId } = useParams();
 
   const universityDetailsService = useInjectService(UniversityDetailsService);
-
-  const { loading } = useAsync(
-    async () => universityDetailsService.loadUniversityDetails.bind(universityDetailsService)(id ? Number(id) : 1),
-    [],
-  );
+  const { loading } = useAsync(() => {
+    if (universityId === undefined) throw new Error("universityId is undefined");
+    return universityDetailsService.loadUniversityDetails(Number(universityId));
+  }, []);
 
   if (loading) return <PageSpin />;
 

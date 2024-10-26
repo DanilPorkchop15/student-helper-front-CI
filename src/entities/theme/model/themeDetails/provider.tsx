@@ -15,14 +15,14 @@ export const ThemeDetailsProvider = React.memo(function ThemeDetailsProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const { id } = useParams();
+  const { themeId } = useParams();
 
   const themeDetailsService = useInjectService(ThemeDetailsService);
 
-  const { loading } = useAsync(
-    async () => themeDetailsService.loadThemeDetails.bind(themeDetailsService)(id ? Number(id) : 1),
-    [],
-  );
+  const { loading } = useAsync(() => {
+    if (themeId === undefined) throw new Error("themeId is undefined");
+    return themeDetailsService.loadThemeDetails(Number(themeId));
+  }, []);
 
   if (loading) return <PageSpin />;
 
