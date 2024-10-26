@@ -35,7 +35,7 @@ export class AppRoutes {
     `${this._calculatePrefix(this.getHomeUrl(), withPrefix)}customers`;
 
   public static getCustomerInfoUrl = (withPrefix: boolean = false, id?: number) => {
-    return `${this._calculatePrefix(this.getCustomersUrl(), withPrefix)}${id ?? ":id"}`;
+    return `${this._calculatePrefix(this.getCustomersUrl(), withPrefix)}${id ?? ":un"}`;
   };
 
   public static getCreateCustomerUrl = (withPrefix: boolean = false) =>
@@ -46,6 +46,18 @@ export class AppRoutes {
 
   public static getSettingsUrl = (withPrefix: boolean = false) =>
     `${this._calculatePrefix(this.getHomeUrl(), withPrefix)}settings`;
+
+  public static getUniversityDetailsUrl = (withPrefix: boolean = false, uId?: number) => {
+    return `${this._calculatePrefix(this.getHomeUrl(), withPrefix)}university/${uId ?? ":universityId"}`;
+  };
+
+  public static getBranchDetailsUrl = (withPrefix: boolean = false, uId?: number, bId?: number) => {
+    return `${this._calculatePrefix(this.getUniversityDetailsUrl(true, uId), withPrefix)}branch/${bId ?? ":branchId"}`;
+  };
+
+  public static getThemeDetailsUrl = (withPrefix: boolean = false, uId?: number, bId?: number, tId?: number) => {
+    return `${this._calculatePrefix(this.getBranchDetailsUrl(true, uId, bId), withPrefix)}theme/${tId ?? ":themeId"}`;
+  };
 
   private static readonly _calculatePrefix = (prefix: string, withPrefix: boolean) =>
     withPrefix ? prefix + "/" : prefix;

@@ -1,31 +1,13 @@
-import Decoder, { boolean, field, number, string, succeed } from "jsonous";
-import { assoc } from "ramda";
+import Decoder, { field, number, string, succeed } from "jsonous";
 
-import { enumDecoder, fieldOrFallback } from "shared/api";
+import { universityDecoder } from "entities/university/@x";
 
-import { type User, UserAction, UserDetails, type UserListItem } from "../interfaces";
+import type { User } from "../interfaces";
 
 export const userDecoder: Decoder<User> = succeed({})
-  .assign("name", field("name", string))
-  .assign("surname", field("surname", string))
-  .assign("email", field("email", string))
-  .map((user) => ({
-    ...user,
-    fullName: user.name + " " + user.surname,
-  }));
-
-
-export const userListItemDecoder: Decoder<UserListItem> = userDecoder
   .assign("id", field("id", number))
-  .assign("photo", fieldOrFallback("photo", string))
-  .assign("blocked", field("active", boolean))
-  .assign("action", field("action", enumDecoder(UserAction)));
-
-export const userDetailsDecoder: Decoder<UserDetails> = succeed({})
-  .assign("id", field("id", number))
-  .assign("id", field("id", number))
-  .assign("name", field("name", string))
-  .assign("surname", field("surname", string))
-  .assign("email", field("email", string))
-  .assign("photo", fieldOrFallback("photo", string))
-  .map((user) => assoc("fullName", user.surname + user.name, user));
+  .assign("fullName", field("fullName", string))
+  .assign("login", field("login", string))
+  .assign("sex", field("sex", string))
+  .assign("age", field("age", number))
+  .assign("university", field("university", universityDecoder));
