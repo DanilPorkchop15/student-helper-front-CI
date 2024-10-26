@@ -6,10 +6,9 @@ export class AppTitles {
   public static getResetPasswordTitle = () => "Восстановление пароля";
   public static getResetPasswordSuccessTitle = () => "Восстановление пароля";
   public static getChangePasswordTitle = () => "Новый пароль";
-  public static getTariffsTitle = () => "Тарифы";
-  public static getEditTariffTitle = () => "Редактирование тарифа";
-  public static getCustomersTitle = () => "Клиенты";
-  public static getEditCustomerTitle = () => "Редактирование клиента";
-  public static getAccountsTitle = () => "Счета";
-  public static getSettingsTitle = () => "Настройки";
+  public static getUniversitiesTitle = () => "Университетy"
+  public static getBranchTitle = (branch: string) => branch
+  public static getThemeTitle= (theme: string) => theme
+  public static getCreateThemeTitle= () => "Создание темы"
+  public static getMeTitle = () => "Профиль";
 }
