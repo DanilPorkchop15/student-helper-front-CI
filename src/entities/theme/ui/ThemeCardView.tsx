@@ -19,7 +19,7 @@ export const ThemeCardView = memo(function ThemeCardView({
   ...props
 }: ThemeCardViewProps & CardProps) {
   return (
-    <Link to={AppRoutes.getThemeDetailsUrl(true, universityId, branchId, theme.id)}>
+    <Link to={AppRoutes.getThemeDetailsUrl(true, { universityId, branchId, themeId: theme.id })}>
       <Card hoverable cover={<img alt={theme.name} src={theme.image} />} style={{ width: 240 }} {...props}>
         <Card.Meta description={`Автор: ${theme.author.fullName}`} title={theme.name} />
       </Card>
