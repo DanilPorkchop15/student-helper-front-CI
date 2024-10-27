@@ -3,13 +3,13 @@ import { ErrorBoundary } from "react-error-boundary";
 import { useParams } from "react-router";
 import { Navigate } from "react-router-dom";
 import { useAsync } from "react-use";
+import { throws } from "node:assert";
 
 import { useInjectService } from "shared/lib/useInjectService";
 import { AppRoutes } from "shared/model/services";
 import PageSpin from "shared/ui/pageSpin";
 
 import { UniversityDetailsService } from "./service";
-import { throws } from "node:assert";
 
 export const UniversityDetailsProvider = React.memo(function UniversityDetailsProvider({
   children,
@@ -19,7 +19,7 @@ export const UniversityDetailsProvider = React.memo(function UniversityDetailsPr
   const { universityId } = useParams();
 
   const universityDetailsService = useInjectService(UniversityDetailsService);
-  const { loading } = useAsync(() => {
+  const { loading } = useAsync(async () => {
     if (universityId === undefined) throw new Error("universityId is undefined");
     return universityDetailsService.loadUniversityDetails(Number(universityId));
   }, []);

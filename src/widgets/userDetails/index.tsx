@@ -10,23 +10,28 @@ import { useUserDetails } from "entities/user";
 export const UserDetailsWidget = React.memo(function Profile() {
   const userDetails = useUserDetails();
 
-  const items: DescriptionsItemType[] = [{
-    key: "name",
-    label: "Название",
-    children: userDetails.state.university.name,
-  }, {
-    key: "address",
-    label: "Адрес",
-    children: userDetails.state.university.address,
-  },{
-    key: "info",
-    label: "Информация",
-    children: userDetails.state.university.info,
-  }, {
-    key: "contacts",
-    label: "Контакты",
-    children: <ContactsView.List contacts={userDetails.state.university.contacts} />,
-  }];
+  const items: DescriptionsItemType[] = [
+    {
+      key: "name",
+      label: "Название",
+      children: userDetails.state.university.name,
+    },
+    {
+      key: "address",
+      label: "Адрес",
+      children: userDetails.state.university.address,
+    },
+    {
+      key: "info",
+      label: "Информация",
+      children: userDetails.state.university.info,
+    },
+    {
+      key: "contacts",
+      label: "Контакты",
+      children: <ContactsView.List contacts={userDetails.state.university.contacts} />,
+    },
+  ];
 
   return (
     <>

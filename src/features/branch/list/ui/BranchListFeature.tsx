@@ -1,7 +1,8 @@
-import { Fragment, memo } from "react";
-import { useUniversityDetails } from "entities/university";
-import { BranchView } from "entities/branch";
+import { memo } from "react";
 import { Flex } from "antd";
+
+import { BranchView } from "entities/branch";
+import { useUniversityDetails } from "entities/university";
 
 export const BranchListFeature = memo(function BranchListFeature() {
   const { id, branches } = useUniversityDetails();

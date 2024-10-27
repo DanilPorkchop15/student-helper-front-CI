@@ -6,6 +6,7 @@ import { useHeader } from "widgets/header";
 
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
+
 import { UserDetailsWidget } from "../../widgets/userDetails";
 
 function ProfilePage() {

@@ -1,2 +1,2 @@
-export * from "./universityDetails"
-export * from "./universityList"
+export * from "./universityDetails";
+export * from "./universityList";

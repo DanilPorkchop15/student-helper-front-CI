@@ -1,16 +1,17 @@
 import { Outlet } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 
+import { NotFoundPage } from "pages/notFound";
+
 import { Header, HeaderProvider } from "widgets/header";
 
+import { BranchDetailsProvider } from "entities/branch";
+import { ThemeDetailsProvider } from "entities/theme";
+import { UniversityDetailsProvider, UniversityListProvider } from "entities/university";
 import { UserDetailsProvider } from "entities/user";
 
 import { AppRoutes } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
-import { NotFoundPage } from "pages/notFound";
-import { UniversityDetailsProvider, UniversityListProvider } from "entities/university";
-import { BranchDetailsProvider } from "entities/branch";
-import { ThemeDetailsProvider } from "entities/theme";
 
 export const browserRouter = createBrowserRouter([
   {

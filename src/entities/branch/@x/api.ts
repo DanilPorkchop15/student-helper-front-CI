@@ -1,1 +1,1 @@
-export { branchDecoder, branchesListDecoder } from "../api"
+export { branchDecoder, branchesListDecoder } from "../api";

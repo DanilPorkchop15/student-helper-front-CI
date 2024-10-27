@@ -8,10 +8,10 @@ import type { University } from "../interfaces";
 export const universityDecoder: Decoder<University> = succeed({})
   .assign("id", field("id", number))
   .assign("name", field("name", string))
-  .assign("info", field("info", string))
+  .assign("info", field("information", string))
   .assign("address", field("address", string))
   .assign("image", field("image", string))
   .assign("contacts", field("contacts", contactsListDecoder))
   .assign("branches", field("branches", branchesListDecoder));
 
-export const universitiesListDecoder: Decoder<University[]> = array(universityDecoder)
+export const universitiesListDecoder: Decoder<University[]> = array(universityDecoder);

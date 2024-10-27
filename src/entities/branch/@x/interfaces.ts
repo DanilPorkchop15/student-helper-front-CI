@@ -1,1 +1,1 @@
-export type {Branch} from "../interfaces"
+export type { Branch } from "../interfaces";

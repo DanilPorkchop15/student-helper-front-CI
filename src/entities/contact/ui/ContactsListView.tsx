@@ -7,7 +7,7 @@ interface ContactsListViewProps {
   contacts: Contact[];
 }
 
-export const ContactsListView = memo(function ContactsList({contacts} : ContactsListViewProps) {
+export const ContactsListView = memo(function ContactsList({ contacts }: ContactsListViewProps) {
   return (
     <List
       dataSource={contacts}
@@ -15,13 +15,9 @@ export const ContactsListView = memo(function ContactsList({contacts} : Contacts
       itemLayout="horizontal"
       renderItem={(item) => (
         <List.Item>
-          <List.Item.Meta
-            description={item.content}
-            title={item.name}
-          />
+          <List.Item.Meta description={item.content} title={item.name} />
         </List.Item>
       )}
     />
   );
 });
-

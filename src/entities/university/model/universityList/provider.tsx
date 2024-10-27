@@ -1,5 +1,6 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
+import { Navigate } from "react-router-dom";
 import { useAsync } from "react-use";
 
 import { useInjectService } from "shared/lib/useInjectService";
@@ -7,7 +8,6 @@ import { AppRoutes } from "shared/model/services";
 import PageSpin from "shared/ui/pageSpin";
 
 import { UniversityListService } from "./service";
-import { Navigate } from "react-router-dom";
 
 export const UniversityListProvider = React.memo(function UniversityListProvider({
   children,
@@ -16,10 +16,7 @@ export const UniversityListProvider = React.memo(function UniversityListProvider
 }) {
   const universityListService = useInjectService(UniversityListService);
 
-  const { loading } = useAsync(
-    async () => universityListService.loadUniversityList.bind(universityListService)(),
-    [],
-  );
+  const { loading } = useAsync(async () => universityListService.loadUniversityList.bind(universityListService)(), []);
 
   if (loading) return <PageSpin />;
 

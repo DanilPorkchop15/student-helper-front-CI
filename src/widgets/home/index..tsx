@@ -1,7 +1,8 @@
 import React, { memo } from "react";
+import { useNavigate } from "react-router-dom";
 import { LoginOutlined, UserAddOutlined } from "@ant-design/icons";
 import { Button, Image, Typography } from "antd";
-import { useNavigate } from "react-router-dom";
+
 import { AppRoutes } from "../../shared/model/services";
 
 export const HomeWidget = memo(function HomeWidget() {

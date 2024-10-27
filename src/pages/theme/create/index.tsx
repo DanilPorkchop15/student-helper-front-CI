@@ -4,9 +4,9 @@ import { Typography } from "antd";
 
 import { useHeader } from "widgets/header";
 
-
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
+
 import { CreateThemeFeature } from "../../../features/theme/create";
 
 function ThemeCreatesPage() {

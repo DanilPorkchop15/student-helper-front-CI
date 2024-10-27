@@ -1,6 +1,6 @@
 import { OpenAPI } from "api";
 
-import { BASE_API_HOST, BASE_TOKEN } from "shared/config/const";
+import { BASE_API_HOST } from "shared/config/const";
 
 import type { InstallationHook } from "./interfaces";
 

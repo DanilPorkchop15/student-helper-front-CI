@@ -1,1 +1,1 @@
-export { ContactsView } from "../ui"
+export { ContactsView } from "../ui";

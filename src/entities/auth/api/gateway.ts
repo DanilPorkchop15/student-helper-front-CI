@@ -10,7 +10,6 @@ import { authenticationTokensDecoder } from "./decoders";
 
 @Service()
 export class AuthApi {
-
   @Inject()
   private readonly _cookiesStore!: CookiesStore;
 
@@ -35,7 +34,7 @@ export class AuthApi {
         fullName: body.fullName,
         email: body.email,
         universityId: body.universityId,
-      }
-    })
+      },
+    });
   }
 }

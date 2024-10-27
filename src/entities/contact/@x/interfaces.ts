@@ -1,1 +1,1 @@
-export type {Contact} from "../interfaces"
+export type { Contact } from "../interfaces";

@@ -7,9 +7,7 @@
   "paths": {
     "/auth/register": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -38,9 +36,7 @@
     },
     "/auth/login": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "parameters": [
           {
             "name": "useCookies",
@@ -82,9 +78,7 @@
     },
     "/auth/refresh": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -110,9 +104,7 @@
     },
     "/auth/confirmEmail": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "operationId": "MapIdentityApi-/auth/confirmEmail",
         "parameters": [
           {
@@ -146,9 +138,7 @@
     },
     "/auth/resendConfirmationEmail": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -167,9 +157,7 @@
     },
     "/auth/forgotPassword": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -198,9 +186,7 @@
     },
     "/auth/resetPassword": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -229,9 +215,7 @@
     },
     "/auth/manage/2fa": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -270,9 +254,7 @@
     },
     "/auth/manage/info": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "responses": {
           "200": {
             "description": "OK",
@@ -300,9 +282,7 @@
         }
       },
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -341,9 +321,7 @@
     },
     "/university": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "parameters": [
           {
             "name": "Id",
@@ -369,9 +347,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -396,9 +372,7 @@
         }
       },
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -423,9 +397,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -452,9 +424,7 @@
     },
     "/university/all": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "responses": {
           "200": {
             "description": "OK",
@@ -474,9 +444,7 @@
     },
     "/branch": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "parameters": [
           {
             "name": "Id",
@@ -502,9 +470,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -529,9 +495,7 @@
         }
       },
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -556,9 +520,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -585,9 +547,7 @@
     },
     "/branch/byunivercity": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "parameters": [
           {
             "name": "UniversityId",
@@ -618,9 +578,7 @@
     },
     "/branch/contact": {
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -645,9 +603,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -674,9 +630,7 @@
     },
     "/topic": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "parameters": [
           {
             "name": "Id",
@@ -705,9 +659,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -732,9 +684,7 @@
         }
       },
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -759,9 +709,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -788,9 +736,7 @@
     },
     "/profile": {
       "get": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "responses": {
           "200": {
             "description": "OK",
@@ -805,9 +751,7 @@
         }
       },
       "post": {
-        "tags": [
-          "StudentHelper.Web"
-        ],
+        "tags": ["StudentHelper.Web"],
         "requestBody": {
           "content": {
             "application/json": {
@@ -829,11 +773,7 @@
   "components": {
     "schemas": {
       "AccessTokenResponse": {
-        "required": [
-          "accessToken",
-          "expiresIn",
-          "refreshToken"
-        ],
+        "required": ["accessToken", "expiresIn", "refreshToken"],
         "type": "object",
         "properties": {
           "tokenType": {
@@ -857,11 +797,7 @@
         "additionalProperties": false
       },
       "AddContactToBranchCommand": {
-        "required": [
-          "branchId",
-          "content",
-          "name"
-        ],
+        "required": ["branchId", "content", "name"],
         "type": "object",
         "properties": {
           "branchId": {
@@ -880,13 +816,7 @@
         "additionalProperties": false
       },
       "Branch": {
-        "required": [
-          "address",
-          "image",
-          "information",
-          "name",
-          "university"
-        ],
+        "required": ["address", "image", "information", "name", "university"],
         "type": "object",
         "properties": {
           "id": {
@@ -923,11 +853,7 @@
         "additionalProperties": false
       },
       "BranchContact": {
-        "required": [
-          "branch",
-          "content",
-          "name"
-        ],
+        "required": ["branch", "content", "name"],
         "type": "object",
         "properties": {
           "id": {
@@ -963,13 +889,7 @@
         "additionalProperties": false
       },
       "CreateBranchCommand": {
-        "required": [
-          "address",
-          "image",
-          "information",
-          "name",
-          "universityId"
-        ],
+        "required": ["address", "image", "information", "name", "universityId"],
         "type": "object",
         "properties": {
           "name": {
@@ -996,13 +916,7 @@
         "additionalProperties": false
       },
       "CreateTopicCommand": {
-        "required": [
-          "branchId",
-          "content",
-          "image",
-          "title",
-          "userId"
-        ],
+        "required": ["branchId", "content", "image", "title", "userId"],
         "type": "object",
         "properties": {
           "title": {
@@ -1036,13 +950,7 @@
         "additionalProperties": false
       },
       "CreateUniversityCommand": {
-        "required": [
-          "contacts",
-          "image",
-          "information",
-          "mainAddress",
-          "name"
-        ],
+        "required": ["contacts", "image", "information", "mainAddress", "name"],
         "type": "object",
         "properties": {
           "name": {
@@ -1102,9 +1010,7 @@
         "additionalProperties": false
       },
       "ForgotPasswordRequest": {
-        "required": [
-          "email"
-        ],
+        "required": ["email"],
         "type": "object",
         "properties": {
           "email": {
@@ -1149,7 +1055,7 @@
             "nullable": true
           }
         },
-        "additionalProperties": { }
+        "additionalProperties": {}
       },
       "InfoRequest": {
         "type": "object",
@@ -1170,10 +1076,7 @@
         "additionalProperties": false
       },
       "InfoResponse": {
-        "required": [
-          "email",
-          "isEmailConfirmed"
-        ],
+        "required": ["email", "isEmailConfirmed"],
         "type": "object",
         "properties": {
           "email": {
@@ -1187,10 +1090,7 @@
         "additionalProperties": false
       },
       "LoginRequest": {
-        "required": [
-          "email",
-          "password"
-        ],
+        "required": ["email", "password"],
         "type": "object",
         "properties": {
           "email": {
@@ -1213,9 +1113,7 @@
         "additionalProperties": false
       },
       "RefreshRequest": {
-        "required": [
-          "refreshToken"
-        ],
+        "required": ["refreshToken"],
         "type": "object",
         "properties": {
           "refreshToken": {
@@ -1226,10 +1124,7 @@
         "additionalProperties": false
       },
       "RegisterRequest": {
-        "required": [
-          "email",
-          "password"
-        ],
+        "required": ["email", "password"],
         "type": "object",
         "properties": {
           "email": {
@@ -1244,10 +1139,7 @@
         "additionalProperties": false
       },
       "RemoveContactFromBranchCommand": {
-        "required": [
-          "branchId",
-          "name"
-        ],
+        "required": ["branchId", "name"],
         "type": "object",
         "properties": {
           "branchId": {
@@ -1262,9 +1154,7 @@
         "additionalProperties": false
       },
       "ResendConfirmationEmailRequest": {
-        "required": [
-          "email"
-        ],
+        "required": ["email"],
         "type": "object",
         "properties": {
           "email": {
@@ -1275,11 +1165,7 @@
         "additionalProperties": false
       },
       "ResetPasswordRequest": {
-        "required": [
-          "email",
-          "newPassword",
-          "resetCode"
-        ],
+        "required": ["email", "newPassword", "resetCode"],
         "type": "object",
         "properties": {
           "email": {
@@ -1298,13 +1184,7 @@
         "additionalProperties": false
       },
       "Topic": {
-        "required": [
-          "branch",
-          "content",
-          "image",
-          "title",
-          "userId"
-        ],
+        "required": ["branch", "content", "image", "title", "userId"],
         "type": "object",
         "properties": {
           "id": {
@@ -1341,11 +1221,7 @@
         "additionalProperties": false
       },
       "TopicContact": {
-        "required": [
-          "content",
-          "name",
-          "topic"
-        ],
+        "required": ["content", "name", "topic"],
         "type": "object",
         "properties": {
           "id": {
@@ -1390,12 +1266,7 @@
         "additionalProperties": false
       },
       "TwoFactorResponse": {
-        "required": [
-          "isMachineRemembered",
-          "isTwoFactorEnabled",
-          "recoveryCodesLeft",
-          "sharedKey"
-        ],
+        "required": ["isMachineRemembered", "isTwoFactorEnabled", "recoveryCodesLeft", "sharedKey"],
         "type": "object",
         "properties": {
           "sharedKey": {
@@ -1423,12 +1294,7 @@
         "additionalProperties": false
       },
       "University": {
-        "required": [
-          "address",
-          "image",
-          "information",
-          "name"
-        ],
+        "required": ["address", "image", "information", "name"],
         "type": "object",
         "properties": {
           "id": {
@@ -1462,11 +1328,7 @@
         "additionalProperties": false
       },
       "UniversityContact": {
-        "required": [
-          "content",
-          "name",
-          "university"
-        ],
+        "required": ["content", "name", "university"],
         "type": "object",
         "properties": {
           "id": {
@@ -1488,13 +1350,7 @@
         "additionalProperties": false
       },
       "UpdateBranchCommand": {
-        "required": [
-          "address",
-          "image",
-          "information",
-          "name",
-          "universityId"
-        ],
+        "required": ["address", "image", "information", "name", "universityId"],
         "type": "object",
         "properties": {
           "id": {
@@ -1525,13 +1381,7 @@
         "additionalProperties": false
       },
       "UpdateProfileCommand": {
-        "required": [
-          "age",
-          "email",
-          "fullName",
-          "universityId",
-          "userId"
-        ],
+        "required": ["age", "email", "fullName", "universityId", "userId"],
         "type": "object",
         "properties": {
           "userId": {
@@ -1559,14 +1409,7 @@
         "additionalProperties": false
       },
       "UpdateTopicCommand": {
-        "required": [
-          "branchId",
-          "content",
-          "id",
-          "image",
-          "title",
-          "userId"
-        ],
+        "required": ["branchId", "content", "id", "image", "title", "userId"],
         "type": "object",
         "properties": {
           "id": {
@@ -1604,13 +1447,7 @@
         "additionalProperties": false
       },
       "UpdateUniversityCommand": {
-        "required": [
-          "contacts",
-          "image",
-          "information",
-          "mainAddress",
-          "name"
-        ],
+        "required": ["contacts", "image", "information", "mainAddress", "name"],
         "type": "object",
         "properties": {
           "id": {
@@ -1680,7 +1517,7 @@
   },
   "security": [
     {
-      "Bearer": [ ]
+      "Bearer": []
     }
   ]
 }

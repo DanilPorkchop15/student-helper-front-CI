@@ -1,1 +1,1 @@
-export * from "./UniversityDetailsFeature"
+export * from "./UniversityDetailsFeature";

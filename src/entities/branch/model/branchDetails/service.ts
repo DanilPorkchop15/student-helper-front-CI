@@ -10,11 +10,11 @@ export class BranchDetailsService {
   @Inject()
   private readonly _api!: BranchApi;
 
-  public get branchDetails () {
-    return this._branchDetails
+  public get branchDetails() {
+    return this._branchDetails;
   }
 
   public async loadBranchDetails(id: number): Promise<void> {
-    this._branchDetails = await this._api.getBranchDetails({ urlParams: { id} });
+    this._branchDetails = await this._api.getBranchDetails({ urlParams: { id } });
   }
 }

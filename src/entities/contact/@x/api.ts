@@ -1,1 +1,1 @@
-export { contactsListDecoder} from "../api"
+export { contactsListDecoder } from "../api";

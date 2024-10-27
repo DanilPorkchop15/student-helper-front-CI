@@ -1,5 +1,6 @@
 import React from "react";
 import { Select } from "antd";
+
 import type { University } from "../interfaces";
 
 export const UniversitySelectView = React.memo(function UniversitySelectView({
@@ -14,14 +15,14 @@ export const UniversitySelectView = React.memo(function UniversitySelectView({
   return (
     <Select
       allowClear
-      placeholder="Выберите университет"
-      value={value}
-      onChange={onChange}
+      showSearch
       options={universities.map((university) => ({
         label: university.name,
         value: university.id,
       }))}
-      showSearch
+      placeholder="Выберите университет"
+      value={value}
+      onChange={onChange}
     />
   );
 });

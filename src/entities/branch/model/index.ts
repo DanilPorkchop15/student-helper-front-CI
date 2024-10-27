@@ -1,1 +1,1 @@
-export * from "./branchDetails"
+export * from "./branchDetails";

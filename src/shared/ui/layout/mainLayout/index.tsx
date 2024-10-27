@@ -1,7 +1,7 @@
 import React from "react";
 import { ConfigProvider, Flex, Layout, type ThemeConfig } from "antd";
-import styles from "./index.module.scss";
 
+import styles from "./index.module.scss";
 
 const theme: ThemeConfig = {
   components: {
@@ -19,7 +19,6 @@ interface MainLayoutProps {
   content: React.ReactNode;
   footer?: React.ReactNode;
 }
-
 
 export const MainLayout = React.memo(function MainLayout({ content, header, footer }: MainLayoutProps) {
   return (

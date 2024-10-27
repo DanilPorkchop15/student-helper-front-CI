@@ -1,1 +1,1 @@
-export type {University} from "../interfaces"
+export type { University } from "../interfaces";

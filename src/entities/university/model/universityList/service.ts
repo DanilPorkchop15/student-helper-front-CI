@@ -8,7 +8,7 @@ export class UniversityListService {
   private _universities: University[] = [];
 
   @Inject()
-  private readonly _universityApi!: UniversitiesApi
+  private readonly _universityApi!: UniversitiesApi;
 
   public get universityList() {
     return this._universities;

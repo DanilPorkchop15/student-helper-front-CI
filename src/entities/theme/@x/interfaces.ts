@@ -1,1 +1,1 @@
-export type {Theme} from "../interfaces"
+export type { Theme } from "../interfaces";

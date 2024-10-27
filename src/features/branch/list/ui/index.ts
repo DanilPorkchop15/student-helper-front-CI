@@ -1,1 +1,1 @@
-export * from "./BranchListFeature"
+export * from "./BranchListFeature";

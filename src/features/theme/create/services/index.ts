@@ -1,1 +1,1 @@
-export * from "./createThemeService"
+export * from "./createThemeService";

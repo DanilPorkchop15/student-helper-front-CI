@@ -1,1 +1,1 @@
-export * from "./ThemeDetailsFeature"
+export * from "./ThemeDetailsFeature";

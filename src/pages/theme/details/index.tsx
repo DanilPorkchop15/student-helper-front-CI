@@ -8,6 +8,7 @@ import { ThemeDetailsFeature } from "features/theme/details";
 
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
+
 import { ThemeDetailsProvider } from "../../../entities/theme";
 
 function ThemeDetailsPage() {

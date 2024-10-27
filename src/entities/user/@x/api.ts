@@ -1,1 +1,1 @@
-export { userDecoder } from "../api"
+export { userDecoder } from "../api";

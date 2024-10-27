@@ -19,7 +19,7 @@ export const ThemeDetailsProvider = React.memo(function ThemeDetailsProvider({
 
   const themeDetailsService = useInjectService(ThemeDetailsService);
 
-  const { loading } = useAsync(() => {
+  const { loading } = useAsync(async () => {
     if (themeId === undefined) throw new Error("themeId is undefined");
     return themeDetailsService.loadThemeDetails(Number(themeId));
   }, []);

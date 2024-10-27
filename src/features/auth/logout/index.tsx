@@ -12,7 +12,7 @@ import { AuthService } from "../service";
 export const LogoutFeature = React.memo(function LogoutButton() {
   const navigate = useNavigate();
   const [withConfirmation, ConfirmationDialog] = useConfirmationModal();
-  const authService = useInjectService(AuthService)
+  const authService = useInjectService(AuthService);
 
   const logout = useCallback(() => {
     authService.logout();

@@ -3,10 +3,10 @@ import { useTitle } from "react-use";
 import { Typography } from "antd";
 
 import { useHeader } from "widgets/header";
+import { HomeWidget } from "widgets/home/index.";
 
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
-import { HomeWidget } from "widgets/home/index.";
 
 function HomePage() {
   useTitle(AppTitles.getHomeTitle());

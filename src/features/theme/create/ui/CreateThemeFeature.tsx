@@ -19,7 +19,14 @@ import {
 } from "@mdxeditor/editor";
 import { Button, Flex, Form, Input } from "antd";
 
+import { FormErrorMessage } from "shared/ui/forms";
+
 import "@mdxeditor/editor/style.css";
+import type { CreateThemeDto } from "../../../../entities/theme";
+import { useInjectService } from "../../../../shared/lib/useInjectService";
+import { CreateThemeService } from "../services";
+import { useParams } from "react-router";
+import { useUserDetails } from "../../../../entities/user";
 
 interface Values {
   name: string;
@@ -27,10 +34,20 @@ interface Values {
 }
 
 export const CreateThemeFeature = () => {
+
+  const { branchId } = useParams();
+
+  const user = useUserDetails()
+
   const ref = useRef<MDXEditorMethods>(null);
+
   const [form] = Form.useForm<Values>();
 
-  const [] = useAsyncFn(async (body) => {}, []);
+  const service = useInjectService(CreateThemeService);
+
+  const [{ loading, error }, onSubmit] = useAsyncFn(async (body: CreateThemeDto) => {
+    await service.createTheme(body)
+  }, []);
 
   return (
     <Flex vertical gap={20}>
@@ -41,26 +58,39 @@ export const CreateThemeFeature = () => {
         name="createTheme"
         size="middle"
         validateTrigger="onSubmit"
-        onFinish={(values ) => {
+        onFinish={(values) => {
           if (!ref.current) {
             return;
           }
-          console.log(values, ref.current.getMarkdown());
+
+          const body: CreateThemeDto = {
+            image: values.image,
+            contacts: [],
+            title: values.name,
+            branchId: Number(branchId),
+            content: ref.current.getMarkdown(),
+            userId: user.state.id
+          }
+
+          void onSubmit(body)
         }}
       >
-        <Form.Item name="name" label="Название темы" rules={[{ required: true }]}>
+        <Form.Item label="Название темы" name="name" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
-        <Form.Item name="image" label="Изображение" rules={[{ required: true }]}>
+        <Form.Item label="Изображение" name="image" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
+        {error && <FormErrorMessage error={error} />}
         <Form.Item>
-          <Button htmlType="submit" type="primary">Создать</Button>
+          <Button htmlType="submit" loading={loading} type="primary">
+            Создать
+          </Button>
         </Form.Item>
       </Form>
       <MDXEditor
-        markdown="Распишите свою тему"
         ref={ref}
+        markdown="Распишите свою тему"
         plugins={[
           imagePlugin(),
           linkPlugin(),
@@ -68,6 +98,7 @@ export const CreateThemeFeature = () => {
           listsPlugin(),
           linkDialogPlugin(),
           toolbarPlugin({
+            // eslint-disable-next-line react/no-unstable-nested-components
             toolbarContents: () => (
               <>
                 {" "}

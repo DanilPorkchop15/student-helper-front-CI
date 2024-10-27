@@ -3,5 +3,5 @@ import { ThemeCardView } from "./ThemeCardView";
 
 export const ThemeView = {
   Card: ThemeCardView,
-  Article: ThemeArticleView
-}
+  Article: ThemeArticleView,
+};

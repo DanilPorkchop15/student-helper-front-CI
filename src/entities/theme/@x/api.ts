@@ -1,1 +1,1 @@
-export {themesListDecoder} from "../api"
+export { themesListDecoder } from "../api";

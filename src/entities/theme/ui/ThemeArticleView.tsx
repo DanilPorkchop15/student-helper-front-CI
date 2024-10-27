@@ -1,8 +1,9 @@
 import React, { memo } from "react";
-import { Flex, Image, Typography } from "antd";
-import type { Theme } from "../interfaces";
 import Markdown from "react-markdown";
+import { Flex, Image, Typography } from "antd";
+
 import { ContactsView } from "../../contact";
+import type { Theme } from "../interfaces";
 
 export interface ThemeArticleViewProps {
   theme: Theme;

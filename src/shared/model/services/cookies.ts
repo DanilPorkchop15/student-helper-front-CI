@@ -16,4 +16,3 @@ export class CookiesStore {
     Cookies.remove(key);
   }
 }
-

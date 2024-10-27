@@ -1,1 +1,1 @@
-export * from "./themeDetails"
+export * from "./themeDetails";

@@ -29,7 +29,8 @@ export class AppRoutes {
   public static getCreateThemeUrl = (
     withPrefix: boolean = false,
     { universityId, branchId }: { universityId?: number; branchId?: number } = {},
-  ) => `${this._calculatePrefix(this.getBranchDetailsUrl(true, { universityId, branchId }), withPrefix)}theme/create    `;
+  ) =>
+    `${this._calculatePrefix(this.getBranchDetailsUrl(true, { universityId, branchId }), withPrefix)}theme/create    `;
 
   private static readonly _calculatePrefix = (prefix: string, withPrefix: boolean) =>
     withPrefix ? prefix + "/" : prefix;

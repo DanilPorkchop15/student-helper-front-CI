@@ -7,4 +7,4 @@ export const contactDecoder: Decoder<Contact> = succeed({})
   .assign("name", field("name", string))
   .assign("content", field("content", string));
 
-export const contactsListDecoder: Decoder<Contact[]> = array(contactDecoder)
+export const contactsListDecoder: Decoder<Contact[]> = array(contactDecoder);

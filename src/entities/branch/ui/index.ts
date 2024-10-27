@@ -3,5 +3,5 @@ import { BranchPanelView } from "./BranchPanelView";
 
 export const BranchView = {
   Card: BranchCardView,
-  Panel: BranchPanelView
-}
+  Panel: BranchPanelView,
+};

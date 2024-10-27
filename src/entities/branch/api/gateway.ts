@@ -2,6 +2,7 @@ import { StudentHelperWebOpenApi } from "api";
 import { Service } from "typedi";
 
 import { applyDecoder } from "shared/lib/applyDecoder";
+
 import type { Branch, GetBranchRequest } from "../interfaces";
 
 import { branchDecoder } from "./decoders";

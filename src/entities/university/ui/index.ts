@@ -3,5 +3,5 @@ import { UniversitySelectView } from "./UniversitySelectView";
 
 export const UniversityView = {
   Panel: UniversityPanelView,
-  Select: UniversitySelectView
-}
+  Select: UniversitySelectView,
+};

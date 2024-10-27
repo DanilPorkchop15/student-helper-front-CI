@@ -7,10 +7,10 @@ import type { Theme } from "../interfaces";
 
 export const themeDecoder: Decoder<Theme> = succeed({})
   .assign("id", field("id", number))
-  .assign("name", field("name", string))
-  .assign("text", field("text", string))
+  .assign("name", field("title", string))
+  .assign("text", field("content", string))
   .assign("contacts", field("contacts", contactsListDecoder))
   .assign("image", field("image", string))
-  .assign("author", field("author", userDecoder));
+  .assign("author", field("user", userDecoder));
 
-export const themesListDecoder: Decoder<Theme[]> = array(themeDecoder)
+export const themesListDecoder: Decoder<Theme[]> = array(themeDecoder);

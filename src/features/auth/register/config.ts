@@ -15,7 +15,12 @@ export const validationRules: ValidationRules<RegisterDto & { passwordConfirmati
     ({ getFieldValue }) => ({
       async validator() {
         const password = String(getFieldValue("password"));
-        if ((!/[A-Z]/.test(password) || !/[0-9]/.test(password) || !/[^a-zA-Z0-9]/.test(password) || password.length < 8)) {
+        if (
+          !/[A-Z]/.test(password) ||
+          !/[0-9]/.test(password) ||
+          !/[^a-zA-Z0-9]/.test(password) ||
+          password.length < 8
+        ) {
           return Promise.reject(
             new Error(
               "Пароль должен содержать строчные латинские буквы, заглавные латинские буквы, цифры и специальные символы и иметь длину не менее 8 символов",
@@ -44,6 +49,6 @@ export const validationRules: ValidationRules<RegisterDto & { passwordConfirmati
     {
       required: true,
       message: "Пожалуйста, введите ваш возраст",
-    }
-  ]
+    },
+  ],
 };

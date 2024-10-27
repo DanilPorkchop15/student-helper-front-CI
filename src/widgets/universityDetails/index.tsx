@@ -6,7 +6,7 @@ import { UniversityDetailsFeature } from "features/university/details";
 export const UniversityDetailsWidget = React.memo(function UniversityDetailsWidget() {
   return (
     <>
-      <UniversityDetailsFeature/>
+      <UniversityDetailsFeature />
       <BranchListFeature />
     </>
   );

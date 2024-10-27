@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAsyncFn } from "react-use";
-import { Button, Form, Input, theme, Typography, InputNumber } from "antd";
+import { Button, Form, Input, InputNumber, theme, Typography } from "antd";
 
 import type { RegisterDto } from "entities/auth";
 import { UniversityView, useUniversityList } from "entities/university";
@@ -25,25 +25,34 @@ interface Values {
 export const RegisterFeature = React.memo(function RegisterForm() {
   const { token } = theme.useToken();
   const navigate = useNavigate();
-  const universities = useUniversityList()
-  const [form] = Form.useForm<Values>()
+  const universities = useUniversityList();
+  const [form] = Form.useForm<Values>();
   const authService = useInjectService(AuthService);
 
-  const [{ error, loading }, submitForm] = useAsyncFn(async ({ fullName, email, password, universityId, age } : Values) => {
-    const body: RegisterDto = { fullName, email, password, universityId, age };
-    await authService.login(body);
-    navigate(AppRoutes.getAuthUrl());
-  });
-  
+  const [{ error, loading }, submitForm] = useAsyncFn(
+    async ({ fullName, email, password, universityId, age }: Values) => {
+      const body: RegisterDto = { fullName, email, password, universityId, age };
+      await authService.login(body);
+      navigate(AppRoutes.getAuthUrl());
+    },
+  );
+
   const onUniversityChange = (id: number) => {
-    form.setFieldValue('universityId', id)
-  }
+    form.setFieldValue("universityId", id);
+  };
 
   return (
     <div>
       <Typography.Title level={3}>Регистрация</Typography.Title>
       <Typography.Text>Помощник для студентов</Typography.Text>
-      <Form autoComplete="off" form={form} name="basic" size="large" style={{ marginTop: token.marginXL }} onFinish={submitForm}>
+      <Form
+        autoComplete="off"
+        form={form}
+        name="basic"
+        size="large"
+        style={{ marginTop: token.marginXL }}
+        onFinish={submitForm}
+      >
         <Form.Item name="fullName" rules={validationRules.fullName}>
           <Input placeholder="ФИО" status={error && "error"} />
         </Form.Item>
@@ -67,11 +76,11 @@ export const RegisterFeature = React.memo(function RegisterForm() {
         <Form.Item name="passwordConfirmation" rules={validationRules.passwordConfirmation}>
           <Input.Password placeholder="Подтвердите пароль" status={error && "error"} />
         </Form.Item>
-        
+
         <Form.Item name="universityId" rules={validationRules.universityId}>
-          <UniversityView.Select universities={universities} onChange={onUniversityChange}/>
+          <UniversityView.Select universities={universities} onChange={onUniversityChange} />
         </Form.Item>
-        
+
         {error?.message && (
           <Typography.Text style={{ color: token.colorErrorText, marginBottom: token.marginXS }}>
             {error.message}
