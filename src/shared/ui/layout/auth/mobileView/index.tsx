@@ -11,18 +11,17 @@ export const MobileView = React.memo(function MobileView({ content }: AuthLayout
   const { token } = theme.useToken();
 
   return (
-    <AntdLayout style={{ backgroundImage: `url("/assets/auth-background-mobile.png")` }}>
+    <AntdLayout>
       <AntdLayout.Header style={{ paddingTop: token.paddingLG }}>
-        <img alt="" src="/assets/WS-Logo.svg" />
+        <img alt="" src="/logo192.png" />
       </AntdLayout.Header>
       <AntdLayout.Content>
         <div className={styles.contentWrapper}>{content}</div>
       </AntdLayout.Content>
       <AntdLayout.Footer style={{ backgroundColor: token.colorWhite }}>
         <Typography.Text type="secondary">
-          2023 <br /> © Work Solutions
+          2024 <br /> © Помощник для студентов
         </Typography.Text>
-        <img alt="" src="/assets/WS-Logo-Copyright.svg" />
       </AntdLayout.Footer>
     </AntdLayout>
   );
