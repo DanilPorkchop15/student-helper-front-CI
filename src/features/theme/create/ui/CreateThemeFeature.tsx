@@ -22,11 +22,11 @@ import { Button, Flex, Form, Input } from "antd";
 import { FormErrorMessage } from "shared/ui/forms";
 
 import "@mdxeditor/editor/style.css";
-import type { CreateThemeDto } from "../../../../entities/theme";
-import { useInjectService } from "../../../../shared/lib/useInjectService";
+import type { CreateThemeDto } from "entities/theme";
+import { useInjectService } from "shared/lib/useInjectService";
 import { CreateThemeService } from "../services";
 import { useParams } from "react-router";
-import { useUserDetails } from "../../../../entities/user";
+import { useUserDetails } from "entities/user";
 
 interface Values {
   name: string;

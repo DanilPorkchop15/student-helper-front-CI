@@ -5,9 +5,7 @@ import { NotFoundPage } from "pages/notFound";
 
 import { Header, HeaderProvider } from "widgets/header";
 
-import { BranchDetailsProvider } from "entities/branch";
-import { ThemeDetailsProvider } from "entities/theme";
-import { UniversityDetailsProvider, UniversityListProvider } from "entities/university";
+import { UniversityListProvider } from "entities/university";
 import { UserDetailsProvider } from "entities/user";
 
 import { AppRoutes } from "shared/model/services";

@@ -3,7 +3,6 @@ import { ErrorBoundary } from "react-error-boundary";
 import { useParams } from "react-router";
 import { Navigate } from "react-router-dom";
 import { useAsync } from "react-use";
-import { throws } from "node:assert";
 
 import { useInjectService } from "shared/lib/useInjectService";
 import { AppRoutes } from "shared/model/services";
