@@ -6,7 +6,7 @@ import type { UniversityContact } from "./UniversityContact";
 export type University = {
   id?: number;
   name: string | null;
-  mainAddress: string | null;
+  address: string | null;
   information: string | null;
   image: string | null;
   contacts?: Array<UniversityContact> | null;

@@ -6,6 +6,7 @@ import { useHeader } from "widgets/header";
 
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
+import { HomeWidget } from "widgets/home/index.";
 
 function HomePage() {
   useTitle(AppTitles.getHomeTitle());
@@ -13,7 +14,8 @@ function HomePage() {
 
   return (
     <Layout.Content>
-      <Typography.Title level={2}>Home</Typography.Title>
+      <Typography.Title level={2}>{AppTitles.getHomeTitle()}</Typography.Title>
+      <HomeWidget />
     </Layout.Content>
   );
 }

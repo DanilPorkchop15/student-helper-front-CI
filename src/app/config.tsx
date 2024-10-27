@@ -22,15 +22,9 @@ export const browserRouter = createBrowserRouter([
     element: (
       <UserDetailsProvider>
         <UniversityListProvider>
-          <UniversityDetailsProvider>
-            <BranchDetailsProvider>
-              <ThemeDetailsProvider>
-                <HeaderProvider>
-                  <Layout.Main content={<Outlet />} footer={<Layout.Footer />} header={<Header />} />
-                </HeaderProvider>
-              </ThemeDetailsProvider>
-            </BranchDetailsProvider>
-          </UniversityDetailsProvider>
+          <HeaderProvider>
+            <Layout.Main content={<Outlet />} footer={<Layout.Footer />} header={<Header />} />
+          </HeaderProvider>
         </UniversityListProvider>
       </UserDetailsProvider>
     ),

@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { LogoutOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 
+import { useInjectService } from "shared/lib/useInjectService";
 import { AppRoutes } from "shared/model/services";
 import { useConfirmationModal } from "shared/ui/confirmationModal";
 
 import { AuthService } from "../service";
-import { useInjectService } from "shared/lib/useInjectService";
 
 export const LogoutFeature = React.memo(function LogoutButton() {
   const navigate = useNavigate();

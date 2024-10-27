@@ -2,12 +2,12 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { UniversityContact } from "./UniversityContact";
+import type { Contact } from "./Contact";
 export type UpdateUniversityCommand = {
   id?: number;
   name: string | null;
   mainAddress: string | null;
-  contacts: Array<UniversityContact> | null;
+  contacts: Array<Contact> | null;
   information: string | null;
   image: string | null;
 };

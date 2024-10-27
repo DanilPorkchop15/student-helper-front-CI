@@ -4,22 +4,23 @@ import { Typography } from "antd";
 
 import { useHeader } from "widgets/header";
 
-import { ThemeView, useThemeDetails } from "entities/theme";
+import { ThemeDetailsFeature } from "features/theme/details";
 
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
+import { ThemeDetailsProvider } from "../../../entities/theme";
 
 function ThemeDetailsPage() {
-  const theme = useThemeDetails();
-  
-  useTitle(AppTitles.getThemeTitle(theme.name));
-  useHeader(<Typography.Title level={3}>{theme.name}</Typography.Title>);
+  useTitle(AppTitles.getThemeTitle());
+  useHeader(<Typography.Title level={3}>{AppTitles.getThemeTitle()}</Typography.Title>);
 
   return (
-    <Layout.Content>
-      <Typography.Title level={2}>{theme.name}</Typography.Title>
-      <ThemeView.Article theme={theme} />
-    </Layout.Content>
+    <ThemeDetailsProvider>
+      <Layout.Content>
+        <Typography.Title level={2}>{AppTitles.getThemeTitle()}</Typography.Title>
+        <ThemeDetailsFeature />
+      </Layout.Content>
+    </ThemeDetailsProvider>
   );
 }
 

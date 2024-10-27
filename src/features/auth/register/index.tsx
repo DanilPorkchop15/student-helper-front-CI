@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useAsyncFn } from "react-use";
-import { Button, Form, Input, theme, Typography } from "antd";
+import { Button, Form, Input, theme, Typography, InputNumber } from "antd";
 
 import type { RegisterDto } from "entities/auth";
 import { UniversityView, useUniversityList } from "entities/university";
@@ -19,6 +19,7 @@ interface Values {
   password: string;
   universityId: number;
   passwordConfirmation: string;
+  age: number;
 }
 
 export const RegisterFeature = React.memo(function RegisterForm() {
@@ -28,8 +29,8 @@ export const RegisterFeature = React.memo(function RegisterForm() {
   const [form] = Form.useForm<Values>()
   const authService = useInjectService(AuthService);
 
-  const [{ error, loading }, submitForm] = useAsyncFn(async ({ fullName, email, password, universityId } : Values) => {
-    const body: RegisterDto = { fullName, email, password, universityId };
+  const [{ error, loading }, submitForm] = useAsyncFn(async ({ fullName, email, password, universityId, age } : Values) => {
+    const body: RegisterDto = { fullName, email, password, universityId, age };
     await authService.login(body);
     navigate(AppRoutes.getAuthUrl());
   });
@@ -46,6 +47,11 @@ export const RegisterFeature = React.memo(function RegisterForm() {
         <Form.Item name="fullName" rules={validationRules.fullName}>
           <Input placeholder="ФИО" status={error && "error"} />
         </Form.Item>
+
+        <Form.Item name="age" rules={validationRules.age}>
+          <InputNumber placeholder="Возраст" status={error && "error"} />
+        </Form.Item>
+
         <Form.Item name="email" rules={validationRules.email}>
           <Input placeholder="E-mail" status={error && "error"} />
         </Form.Item>

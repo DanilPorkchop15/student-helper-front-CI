@@ -5,22 +5,22 @@ import { Typography } from "antd";
 import { BranchDetailsWidget } from "widgets/branchDetails";
 import { useHeader } from "widgets/header";
 
-import { useBranchDetails } from "entities/branch";
+import { BranchDetailsProvider } from "entities/branch";
 
 import { AppTitles } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
 
 function BranchPage() {
-  const branch = useBranchDetails();
-
-  useTitle(AppTitles.getBranchTitle(branch.name));
-  useHeader(<Typography.Title level={3}>{branch.name}</Typography.Title>);
+  useTitle(AppTitles.getBranchTitle());
+  useHeader(<Typography.Title level={3}>{AppTitles.getBranchTitle()}</Typography.Title>);
 
   return (
-    <Layout.Content>
-      <Typography.Title level={2}>{branch.name}</Typography.Title>
-      <BranchDetailsWidget />
-    </Layout.Content>
+    <BranchDetailsProvider>
+      <Layout.Content>
+        <Typography.Title level={2}>{AppTitles.getBranchTitle()}</Typography.Title>
+        <BranchDetailsWidget />
+      </Layout.Content>
+    </BranchDetailsProvider>
   );
 }
 

@@ -1,16 +1,20 @@
-import { Service } from "typedi";
+import { Inject, Service } from "typedi";
 
+import { UniversitiesApi } from "../../api";
 import type { University } from "../../interfaces";
 
 @Service()
 export class UniversityListService {
-  private readonly _universities: University[] = [];
+  private _universities: University[] = [];
+
+  @Inject()
+  private readonly _universityApi!: UniversitiesApi
 
   public get universityList() {
     return this._universities;
   }
 
   public async loadUniversityList(): Promise<void> {
-    return Promise.resolve();
+    this._universities = await this._universityApi.getUniversities();
   }
 }

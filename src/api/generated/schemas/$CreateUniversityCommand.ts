@@ -27,7 +27,7 @@ export const $CreateUniversityCommand = {
     contacts: {
       type: "array",
       contains: {
-        type: "UniversityContact",
+        type: "Contact",
       },
       isRequired: true,
       isNullable: true,

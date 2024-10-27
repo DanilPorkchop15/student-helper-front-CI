@@ -1,4 +1,4 @@
-import { OpenAPI, UsersOpenApi } from "api";
+import { OpenAPI, StudentHelperWebOpenApi } from "api";
 import { Inject, Service } from "typedi";
 
 import { applyDecoder } from "shared/lib/applyDecoder";
@@ -17,6 +17,6 @@ export class UsersApi {
   private readonly _cookiesStore!: CookiesStore;
   public async getUserDetails(): Promise<User> {
     OpenAPI.TOKEN = this._cookiesStore.get("token")
-    return UsersOpenApi.userInfo().then(applyDecoder(userDecoder));
+    return StudentHelperWebOpenApi.getProfile().then(applyDecoder(userDecoder));
   }
 }

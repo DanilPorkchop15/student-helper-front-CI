@@ -21,7 +21,7 @@ export const $UpdateUniversityCommand = {
     contacts: {
       type: "array",
       contains: {
-        type: "UniversityContact",
+        type: "Contact",
       },
       isRequired: true,
       isNullable: true,

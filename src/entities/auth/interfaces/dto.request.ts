@@ -3,6 +3,7 @@ export interface RegisterDto {
   password: string;
   fullName: string;
   universityId: number;
+  age: number;
 }
 
 export interface LoginDto {

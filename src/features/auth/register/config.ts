@@ -1,4 +1,4 @@
-import type { LoginDto, RegisterDto } from "entities/auth";
+import type { RegisterDto } from "entities/auth";
 
 import type { ValidationRules } from "shared/lib/types";
 
@@ -39,5 +39,11 @@ export const validationRules: ValidationRules<RegisterDto & { passwordConfirmati
         return Promise.resolve();
       },
     }),
+  ],
+  age: [
+    {
+      required: true,
+      message: "Пожалуйста, введите ваш возраст",
+    }
   ]
 };

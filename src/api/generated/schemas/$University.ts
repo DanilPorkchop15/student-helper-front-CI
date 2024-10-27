@@ -13,7 +13,7 @@ export const $University = {
       isRequired: true,
       isNullable: true,
     },
-    mainAddress: {
+    address: {
       type: "string",
       isRequired: true,
       isNullable: true,
