@@ -14,7 +14,11 @@ export class UsersApi {
   private readonly _cookiesStore!: CookiesStore;
 
   public async getUserDetails(): Promise<User> {
-    OpenAPI.TOKEN = this._cookiesStore.get("token");
+    const token = this._cookiesStore.get("token");
+    if (!token) {
+      throw new Error("No token found");
+    }
+    OpenAPI.TOKEN = token;
     return StudentHelperWebOpenApi.getProfile().then(applyDecoder(userDecoder));
   }
 }
