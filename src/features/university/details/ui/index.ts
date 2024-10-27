@@ -1,1 +1,1 @@
-export * from "./UniversityDetailsService"
+export * from "./UniversityDetailsFeature"
