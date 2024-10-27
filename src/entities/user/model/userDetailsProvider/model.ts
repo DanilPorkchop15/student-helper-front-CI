@@ -1,5 +1,5 @@
 import { Model } from "shared/model/abstractModel";
 
-import type { UserDetails } from "../../interfaces";
+import type { User } from "../../interfaces";
 
-export class UserDetailsModel extends Model<UserDetails> {}
+export class UserDetailsModel extends Model<User> {}
