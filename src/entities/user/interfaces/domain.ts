@@ -4,8 +4,7 @@ import type { UniqueEntity } from "shared/model/interfaces";
 
 export interface User extends UniqueEntity {
   fullName: string;
-  login: string;
-  sex: string
+  email: string;
   age: number,
   university: University
 }
