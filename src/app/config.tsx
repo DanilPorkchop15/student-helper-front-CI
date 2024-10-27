@@ -2,44 +2,39 @@ import { Outlet } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 
 import { Header, HeaderProvider } from "widgets/header";
-import { Sidebar } from "widgets/sidebar";
 
 import { UserDetailsProvider } from "entities/user";
 
 import { AppRoutes } from "shared/model/services";
 import { Layout } from "shared/ui/layout";
+import { NotFoundPage } from "pages/notFound";
+import { UniversityDetailsProvider, UniversityListProvider } from "entities/university";
+import { BranchDetailsProvider } from "entities/branch";
+import { ThemeDetailsProvider } from "entities/theme";
 
 export const browserRouter = createBrowserRouter([
   {
     path: "*",
-    element: "error",
+    element: <NotFoundPage />,
   },
   {
     path: AppRoutes.getHomeUrl(),
     element: (
       <UserDetailsProvider>
-        <HeaderProvider>
-          <Layout.Main content={<Outlet />} footer={<Layout.Footer />} header={<Header />} sidebar={<Sidebar />} />
-        </HeaderProvider>
+        <UniversityListProvider>
+          <HeaderProvider>
+            <Layout.Main content={<Outlet />} footer={<Layout.Footer />} header={<Header />} />
+          </HeaderProvider>
+        </UniversityListProvider>
       </UserDetailsProvider>
     ),
     children: [
       { index: true, lazy: async () => import("pages/home") },
-      { path: AppRoutes.getUsersUrl(), lazy: async () => import("pages/users/table") },
-      { path: AppRoutes.getUpdateUserUrl(true), lazy: async () => import("pages/users/update") },
-      { path: AppRoutes.getSettingsUrl(true), lazy: async () => import("pages/settings") },
-      {
-        path: AppRoutes.getTariffsUrl(true),
-        lazy: async () => import("pages/tariffs/table"),
-        children: [{ path: AppRoutes.getCreateTariffUrl(true), lazy: async () => import("pages/tariffs/create") }],
-      },
-      { path: AppRoutes.getTariffDetailsUrl(true), lazy: async () => import("pages/tariffs/edit") },
-      {
-        path: AppRoutes.getCustomersUrl(true),
-        lazy: async () => import("pages/customers/table"),
-        children: [{ path: AppRoutes.getCreateCustomerUrl(true), lazy: async () => import("pages/customers/create") }],
-      },
-      { path: AppRoutes.getCustomerInfoUrl(true), lazy: async () => import("pages/customers/edit") },
+      { path: AppRoutes.getBranchDetailsUrl(), lazy: async () => import("pages/branch") },
+      { path: AppRoutes.getUniversityDetailsUrl(), lazy: async () => import("pages/university") },
+      { path: AppRoutes.getThemeDetailsUrl(), lazy: async () => import("pages/theme/details") },
+      { path: AppRoutes.getCreateThemeUrl(), lazy: async () => import("pages/theme/create") },
+      { path: AppRoutes.getProfileUrl(), lazy: async () => import("pages/profile") },
     ],
   },
   {
@@ -47,12 +42,7 @@ export const browserRouter = createBrowserRouter([
     element: <Layout.Auth content={<Outlet />} />,
     children: [
       { index: true, lazy: async () => import("pages/auth/login") },
-      { path: AppRoutes.getResetPasswordUrl(), lazy: async () => import("pages/auth/resetPassword") },
-      { path: AppRoutes.getChangePasswordUrl(), lazy: async () => import("pages/auth/changePassword") },
-      {
-        path: AppRoutes.getResetPasswordSuccessUrl(),
-        lazy: async () => import("pages/auth/resetPasswordSuccess"),
-      },
+      { path: AppRoutes.getRegisterUrl(), lazy: async () => import("pages/auth/register") },
     ],
   },
 ]);

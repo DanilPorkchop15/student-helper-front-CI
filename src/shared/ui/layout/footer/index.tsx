@@ -4,5 +4,5 @@ import { Layout } from "antd";
 const YEAR = new Date().getFullYear();
 
 export const Footer = React.memo(function Footer() {
-  return <Layout.Footer style={{ textAlign: "center", color: "#fff" }}>© GRYS Power, {YEAR}</Layout.Footer>;
+  return <Layout.Footer style={{ textAlign: "center", color: "#fff" }}>© Помощник для студентов, {YEAR}</Layout.Footer>;
 });

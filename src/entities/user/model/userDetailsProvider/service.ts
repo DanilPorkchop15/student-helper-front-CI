@@ -15,8 +15,8 @@ export class UserDetailsService {
     return this._userDetailsModel;
   }
 
-  public async loadUserDetails(id: Guid): Promise<void> {
-    const profile = await this._api.getUserDetails({ urlParams: { id: id } });
+  public async loadUserDetails(): Promise<void> {
+    const profile = await this._api.getUserDetails();
     this._userDetailsModel = new UserDetailsModel(profile);
   }
 

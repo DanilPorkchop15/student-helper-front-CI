@@ -15,17 +15,9 @@ export const UserDetailsProvider = React.memo(function UserProfileProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const { id } = useParams();
-
-  //TODO add right id
   const userDetailsService = useInjectService(UserDetailsService);
 
-  const { loading } = useAsync(
-    async () => userDetailsService.loadUserDetails.bind(userDetailsService)(id ? Number(id) : 1),
-    [],
-  );
-
-  if (loading) return <PageSpin />;
+  if (!userDetailsService.userDetails) throw new Error("userDetails not found");
 
   return <ErrorBoundary fallback={<Navigate replace to={AppRoutes.getAuthUrl()} />}>{children}</ErrorBoundary>;
 });

@@ -1,18 +1,13 @@
-export interface LoginDto {
-  login: string;
-  password: string;
-}
-
-export interface ResetPasswordDto {
+export interface RegisterDto {
   email: string;
-}
-
-export interface CheckResetCodeDto {
-  code: string;
-}
-
-export interface ChangePasswordDto {
   password: string;
-  passwordConfirmation: string;
-  code: string;
+  fullName: string;
+  universityId: number;
+  age: number;
 }
+
+export interface LoginDto {
+  email: string;
+  password: string;
+}
+

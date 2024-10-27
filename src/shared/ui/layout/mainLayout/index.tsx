@@ -1,5 +1,7 @@
 import React from "react";
-import { ConfigProvider, Flex, Layout, theme as antdTheme, type ThemeConfig } from "antd";
+import { ConfigProvider, Flex, Layout, type ThemeConfig } from "antd";
+import styles from "./index.module.scss";
+
 
 const theme: ThemeConfig = {
   components: {
@@ -13,44 +15,28 @@ const theme: ThemeConfig = {
 };
 
 interface MainLayoutProps {
-  sidebar?: React.ReactNode;
   header?: React.ReactNode;
   content: React.ReactNode;
   footer?: React.ReactNode;
 }
 
-const MAIN_SECTION_PADDING = "96px 370px 0 0";
-const CONTENT_SECTION_PADDING = "64px 100px";
 
-export const MainLayout = React.memo(function MainLayout({ sidebar, content, header, footer }: MainLayoutProps) {
-  const { token } = antdTheme.useToken();
+export const MainLayout = React.memo(function MainLayout({ content, header, footer }: MainLayoutProps) {
   return (
     <ConfigProvider theme={theme}>
-      <Layout style={{ minHeight: "100vh", height: "spread" }}>
+      <Layout style={{ minHeight: "100vh" }}>
         <Flex style={{ width: "100%", height: "100%", minHeight: "100vh" }}>
-          <div style={{ minHeight: "100vh" }}>{sidebar}</div>
+          {header}
           <Flex
             vertical
+            className={styles.mainSection}
             flex={1}
             justify="space-between"
-            style={{ height: "100%", padding: MAIN_SECTION_PADDING, minHeight: "100vh" }}
+            style={{ height: "100%", minHeight: "100vh" }}
           >
-            <Flex
-              vertical
-              flex={1}
-              gap={40}
-              style={{
-                boxShadow: token.boxShadow,
-                background: token.colorBgContainer,
-                borderRadius: token.borderRadiusLG,
-                padding: CONTENT_SECTION_PADDING,
-              }}
-            >
-              {header}
-              {content}
-            </Flex>
-            {footer}
+            {content}
           </Flex>
+          {footer}
         </Flex>
       </Layout>
     </ConfigProvider>
