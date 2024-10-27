@@ -1,6 +1,6 @@
 import type { CookieAttributes } from "js-cookie";
 import Cookies from "js-cookie";
-import { Container, Service } from "typedi";
+import { Service } from "typedi";
 
 @Service()
 export class CookiesStore {
@@ -17,4 +17,3 @@ export class CookiesStore {
   }
 }
 
-export const cookiesStore = Container.get(CookiesStore);
