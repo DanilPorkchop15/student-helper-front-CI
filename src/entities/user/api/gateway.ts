@@ -12,6 +12,7 @@ import { userDecoder } from "./decoders";
 export class UsersApi {
   @Inject()
   private readonly _cookiesStore!: CookiesStore;
+
   public async getUserDetails(): Promise<User> {
     OpenAPI.TOKEN = this._cookiesStore.get("token");
     return StudentHelperWebOpenApi.getProfile().then(applyDecoder(userDecoder));

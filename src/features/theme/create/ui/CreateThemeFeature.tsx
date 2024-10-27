@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useParams } from "react-router";
 import { useAsyncFn } from "react-use";
 import {
   BoldItalicUnderlineToggles,
@@ -19,14 +20,15 @@ import {
 } from "@mdxeditor/editor";
 import { Button, Flex, Form, Input } from "antd";
 
+import type { CreateThemeDto } from "entities/theme";
+import { useUserDetails } from "entities/user";
+
+import { useInjectService } from "shared/lib/useInjectService";
 import { FormErrorMessage } from "shared/ui/forms";
 
-import "@mdxeditor/editor/style.css";
-import type { CreateThemeDto } from "entities/theme";
-import { useInjectService } from "shared/lib/useInjectService";
 import { CreateThemeService } from "../services";
-import { useParams } from "react-router";
-import { useUserDetails } from "entities/user";
+
+import "@mdxeditor/editor/style.css";
 
 interface Values {
   name: string;

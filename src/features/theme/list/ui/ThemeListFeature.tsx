@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { Flex } from "antd";
 
-import { useBranchDetails } from "entities/branch/model/branchDetails";
+import { useBranchDetails } from "entities/branch";
 import { ThemeView } from "entities/theme";
 import { useUniversityDetails } from "entities/university";
 

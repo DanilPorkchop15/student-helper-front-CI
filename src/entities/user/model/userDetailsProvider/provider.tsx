@@ -1,14 +1,12 @@
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import { useParams } from "react-router";
 import { Navigate } from "react-router-dom";
-import { useAsync } from "react-use";
 
 import { useInjectService } from "shared/lib/useInjectService";
 import { AppRoutes } from "shared/model/services";
-import PageSpin from "shared/ui/pageSpin";
 
 import { UserDetailsService } from "./service";
+import PageSpin from "shared/ui/pageSpin";
 
 export const UserDetailsProvider = React.memo(function UserProfileProvider({
   children,
@@ -17,7 +15,7 @@ export const UserDetailsProvider = React.memo(function UserProfileProvider({
 }) {
   const userDetailsService = useInjectService(UserDetailsService);
 
-  if (!userDetailsService.userDetails) throw new Error("userDetails not found");
+  if (!userDetailsService.userDetails) return <PageSpin />;
 
   return <ErrorBoundary fallback={<Navigate replace to={AppRoutes.getAuthUrl()} />}>{children}</ErrorBoundary>;
 });

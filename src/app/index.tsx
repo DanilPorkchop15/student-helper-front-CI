@@ -10,13 +10,12 @@ import { postInstallHooks, preInstallHooks } from "./hooks";
 import { withProviders } from "./providers";
 
 import "./index.scss";
+import { browserRouter } from "./config";
 
 const App = React.memo(function App() {
   const { value: configModule } = useAsync(async () => import("./config"));
 
-  if (!configModule?.browserRouter) return null;
-
-  return <RouterProvider fallbackElement={<PageSpin />} router={configModule.browserRouter} />;
+  return <RouterProvider fallbackElement={<PageSpin />} router={browserRouter} />;
 });
 
 export function mountApp(): void {

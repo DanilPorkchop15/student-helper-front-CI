@@ -17,7 +17,7 @@ export const LogoutFeature = React.memo(function LogoutButton() {
   const logout = useCallback(() => {
     authService.logout();
     navigate(AppRoutes.getAuthUrl());
-  }, [authService]);
+  }, [authService, navigate]);
 
   return (
     <>

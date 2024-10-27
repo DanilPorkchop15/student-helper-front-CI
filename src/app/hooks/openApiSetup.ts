@@ -6,5 +6,4 @@ import type { InstallationHook } from "./interfaces";
 
 export const openApiSetup: InstallationHook = () => {
   OpenAPI.BASE = BASE_API_HOST;
-  OpenAPI.TOKEN = BASE_TOKEN;
 };
