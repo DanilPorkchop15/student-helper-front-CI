@@ -3,7 +3,7 @@ import type { LoginDto } from "entities/auth";
 import type { ValidationRules } from "shared/lib/types";
 
 export const validationRules: ValidationRules<LoginDto> = {
-  login: [
+  email: [
     {
       type: "email",
       message: "Ввод не является действительным E-mail!",

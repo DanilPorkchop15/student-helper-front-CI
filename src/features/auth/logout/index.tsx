@@ -6,11 +6,13 @@ import { Button } from "antd";
 import { AppRoutes } from "shared/model/services";
 import { useConfirmationModal } from "shared/ui/confirmationModal";
 
-import { authService } from "../service";
+import { AuthService } from "../service";
+import { useInjectService } from "shared/lib/useInjectService";
 
 export const LogoutFeature = React.memo(function LogoutButton() {
   const navigate = useNavigate();
   const [withConfirmation, ConfirmationDialog] = useConfirmationModal();
+  const authService = useInjectService(AuthService)
 
   const logout = useCallback(() => {
     authService.logout();
