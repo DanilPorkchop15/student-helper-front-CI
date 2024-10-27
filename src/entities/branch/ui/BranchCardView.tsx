@@ -9,11 +9,13 @@ import type { Branch } from "../interfaces";
 interface BranchCardViewProps {
   branch: Branch;
   universityId: number;
+  key: number;
 }
 
 export const BranchCardView = memo(function BranchCardView({
   branch,
   universityId,
+  key,
   ...props
 }: BranchCardViewProps & CardProps) {
   return (

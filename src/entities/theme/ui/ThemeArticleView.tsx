@@ -16,9 +16,9 @@ export const ThemeArticleView = memo(function ThemeArticleView({ theme }: ThemeA
         <Typography.Text>Автор: {theme.author.fullName}</Typography.Text>
       </Flex>
       <Image alt={theme.name} src={theme.image} />
-      <Typography.Text>
+      <Typography.Paragraph>
         <Markdown>{theme.text}</Markdown>
-      </Typography.Text>
+      </Typography.Paragraph>
       <ContactsView.List contacts={theme.contacts} />
     </Flex>
   );
